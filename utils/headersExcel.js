@@ -1,0 +1,14 @@
+exports.headers = [
+    'ISAP_CEMPRESA',
+    'PAM_NFOLIO',
+    'PAM_NFOLIO_XNEAR',
+    'CANAL_VF',
+    'ETAPA',
+    'PROCEDENCIA',
+    'ID_CASO_BIZAGI',
+    'PRESTADOR',
+    'Día de XPAM_FRECEP_AGE',
+    'DIAG_CDIAGNOSTICO',
+    'DIAG_TDESCRIPCION',
+    'TIPO ATENCION'
+];
