@@ -5,8 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 //Gestión de Rutas
-var indexRouter = require('./routes/index');
 var uploadFileRouter = require('./routes/uploadFile');
+var validaRouter = require('./routes/validarDatos');
 
 var app = express();
 
@@ -20,8 +20,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
 app.use('/reproceso', uploadFileRouter);
+app.use('/cuadratura-datos', validaRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

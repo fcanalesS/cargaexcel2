@@ -1,6 +1,7 @@
 const path = require('path');
 const multer = require('multer');
 const XLSX = require('xlsx');
+const insertData = require('../services/insertDataExcel');
 
 
 
@@ -41,10 +42,14 @@ exports.uploadFile = async(req, res, next) => {
             try{
                 fileName = req.file.filename;
                 // let resultValidacion = validarArchivo.validarExcel(fileName); 
-                let getDataInsert = 
-                res.send({fileName: fileName, resultado_validacion: resultValidacion});
+                let getDataInsert = await insertData.insertDataFile(fileName);
+                console.log("********GET DATA INSERT********")
+                console.log(getDataInsert);
+                console.log("********GET DATA INSERT********")
+                res.send({fileName: fileName, dataInsert: getDataInsert});
             }catch (e) {
-                next(e);
+                res.send({error: e.message})
+                //next(e);
             }
         }
     });
