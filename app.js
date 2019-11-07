@@ -7,6 +7,7 @@ var logger = require('morgan');
 //Gestión de Rutas
 var uploadFileRouter = require('./routes/uploadFile');
 var validaRouter = require('./routes/validarDatos');
+var estadosRouter = require('./routes/obtieneEstados');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/reproceso', uploadFileRouter);
 app.use('/cuadratura-datos', validaRouter);
+app.use('/obtiene-estados', estadosRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
