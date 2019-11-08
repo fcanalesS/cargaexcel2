@@ -6,20 +6,24 @@ const getestado_e = require('../dto/getEstadoE');
 exports.obtieneEstadoE = async (req, res, next) => {
     let secuencia = 1;
 
-    let resultEstadoP = getestado_p.getEstadoP(secuencia);
+    let resultEstadoE = await getestado_e.getEstadoE(secuencia);
 
-    res.send({"resultEstadoP": resultEstadoP});
+    res.send({"resultEstadoP": resultEstadoE});
 
 };
 
 exports.obtieneEstadoP = async (req, res, next) => {
+    let secuencia = 1;
 
+    let resultEstadoP = await getestado_p.getEstadoP(secuencia);
+
+    res.send({"resultEstadoP": resultEstadoP});
 };
 
 exports.obtieneEstadoI = async (req, res, next) => {
     let secuencia = 1;
 
-    let resultEstadoI = getestado_i.getEstadoI(secuencia);
+    let resultEstadoI = await getestado_i.getEstadoI(secuencia);
 
     res.send({"resultEstadoI": resultEstadoI});
 };

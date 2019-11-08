@@ -30,16 +30,18 @@ exports.insertDataFile = async (fileName) => {
         ]
 
         try{
+            console.log("inserta datos ");
             await insertPamBiz.insert_PAMBIZ_REPROCESA_GRUPO9(datosInsertar)
         }catch (e){
             return {error: e.message};
         }
     }
 
-    try {
-        
-    } catch (e) {
-        
+    try{
+        console.log("CARGA EL PKG CON EL REPROCESA DEL GRUPO 9");
+        await reproceso.exec_PROC_REPROCESA_GRUPO9(secuencia);
+    }catch(e){
+        return {error: e.message};
     }
 
 
