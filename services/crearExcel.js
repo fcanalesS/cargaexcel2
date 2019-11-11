@@ -1,11 +1,11 @@
 const XLSX = require('xlsx');
 const path = require('path');
 
-const fileName = 'file-1573222462649.xlsx';
+//const fileName = 'file-1573222462649.xlsx';
 const pathUpload = path.join(__dirname, '../uploads');
 const pathGeneratedExcel = path.join(__dirname, '../generatedExcels');
 
-exports.crearExcelDescargar = async (estadoP, estadoI, estadoE) => {
+exports.crearExcelDescargar = async (estadoP, estadoI, estadoE, fileName) => {
     let wb = XLSX.readFile(pathUpload + "/" + fileName);
 
     let noProcesados = XLSX.utils.json_to_sheet(estadoE);

@@ -41,13 +41,14 @@ exports.uploadFile = async(req, res, next) => {
         }else{
             try{
                 fileName = req.file.filename;
-                ////let getDataInsert = await insertData.insertDataFile(fileName);
-                let getDataInsert = [];
+                console.log("******FILENAME******")
+                console.log("filename en el node: ", fileName);
+                console.log("******FILENAME******")
+                let getDataInsert = await insertData.insertDataFile(fileName);
                 console.log("********GET DATA INSERT********")
-                //console.log(getDataInsert);
+                console.log(getDataInsert);
                 console.log("********GET DATA INSERT********")
-                ////res.send({fileName: fileName, dataInsert: getDataInsert});
-                res.send({fileName: fileName, dataInsert: {mensaje: "Mensaje de prueba", secuencia: 1}});
+                res.send({fileName: fileName, dataInsert: getDataInsert});
             }catch (e) {
                 res.send({error: e.message})
                 //next(e);

@@ -5,7 +5,7 @@ const cuadraturaDatos = require('../controllers/cuadraturaDatosController')
 
 
 router.get('/imedpam-resumen-envcta', cuadraturaDatos.validaEstadoImedPam);
-router.get('/imedpam-envcta', cuadraturaDatos.validaEstadoImedPam);
+router.get('/imedpam-envcta', cuadraturaDatos.validaImedpamEnvcta);
 router.get('/pam-diagnostico-cie10', cuadraturaDatos.pamDiagnosticoCIE10);
 
 
