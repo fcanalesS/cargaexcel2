@@ -41,12 +41,13 @@ exports.uploadFile = async(req, res, next) => {
         }else{
             try{
                 fileName = req.file.filename;
-                // let resultValidacion = validarArchivo.validarExcel(fileName); 
-                let getDataInsert = await insertData.insertDataFile(fileName);
+                ////let getDataInsert = await insertData.insertDataFile(fileName);
+                let getDataInsert = [];
                 console.log("********GET DATA INSERT********")
-                console.log(getDataInsert);
+                //console.log(getDataInsert);
                 console.log("********GET DATA INSERT********")
-                res.send({fileName: fileName, dataInsert: getDataInsert});
+                ////res.send({fileName: fileName, dataInsert: getDataInsert});
+                res.send({fileName: fileName, dataInsert: {mensaje: "Mensaje de prueba", secuencia: 1}});
             }catch (e) {
                 res.send({error: e.message})
                 //next(e);

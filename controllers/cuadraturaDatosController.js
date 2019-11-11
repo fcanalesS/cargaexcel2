@@ -6,8 +6,9 @@ const getValidacion3 = require('../dto/getValidacion3');
 
 
 exports.validaEstadoImedPam = async (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
     try{
-        // let secuencia = utils.getSecuencia();
+        console.log("secuencia node: ", req.query);
         let secuencia = 1;
 
 
@@ -19,18 +20,23 @@ exports.validaEstadoImedPam = async (req, res, next) => {
 };
 
 exports.validaImedpamEnvcta = async (req, res, next) => {
-   try{
+    res.header("Access-Control-Allow-Origin", "*");
+    try{
+        console.log("secuencia node: ", req.query['secuencia']);
+
         // let secuencia = utils.getSecuencia();
         let secuencia = 1;
         let resultValidacion2 = await getValidacion2.get_validacion_estado_bd_2(secuencia);
         res.send({"validacion_2": resultValidacion2 });
-   }catch(e){
+    }catch(e){
     res.send({"validacion_2": 0, "error": e.message});
     }
 }
 
 exports.pamDiagnosticoCIE10 = async (req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "*");
     try{
+        console.log("secuencia node: ", req.query['secuencia']);
         // let secuencia = utils.getSecuencia();
         let secuencia = 1;
 
