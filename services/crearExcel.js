@@ -1,7 +1,6 @@
 const XLSX = require('xlsx');
 const path = require('path');
 
-//const fileName = 'file-1573222462649.xlsx';
 const pathUpload = path.join(__dirname, '../uploads');
 const pathGeneratedExcel = path.join(__dirname, '../generatedExcels');
 

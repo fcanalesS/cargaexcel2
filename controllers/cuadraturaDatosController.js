@@ -22,9 +22,6 @@ exports.validaEstadoImedPam = async (req, res, next) => {
 exports.validaImedpamEnvcta = async (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     try{
-        console.log("secuencia node: ", req.query['secuencia']);
-
-        // let secuencia = utils.getSecuencia();
         let secuencia = req.query["secuencia"];
         let resultValidacion2 = await getValidacion2.get_validacion_estado_bd_2(secuencia);
         res.send({"validacion_2": resultValidacion2 });

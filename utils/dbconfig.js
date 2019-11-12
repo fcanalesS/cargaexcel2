@@ -1,23 +1,25 @@
+require('custom-env').env();
+
 module.exports = {
-    user          : "beneficios",
+    user          : process.env.USER,
   
     // Get the password from the environment variable
     // NODE_ORACLEDB_PASSWORD.  The password could also be a hard coded
     // string (not recommended), or it could be prompted for.
     // Alternatively use External Authentication so that no password is
     // needed.
-    password      : "beneficiosdesa",
+    password      : process.env.PASSOWRD,
   
     // For information on connection strings see:
     // https://oracle.github.io/node-oracledb/doc/api.html#connectionstrings
     connectString : "(DESCRIPTION=\n" +
                     "    (ADDRESS=\n" +
-                    "      (PROTOCOL=TCP)\n" +
-                    "      (HOST=bandesa.banmedica.cl)\n" +
-                    "      (PORT=1521)\n" +
+                    "      (PROTOCOL="+ process.env.PROTOCOL +")\n" +
+                    "      (HOST="+ process.env.HOST +")\n" +
+                    "      (PORT="+ process.env.PORT +")\n" +
                     "    )\n" +
                     "    (CONNECT_DATA=\n" +
-                    "      (SID=DSUCU)\n" +
+                    "      (SID=" + process.env.SID + ")\n" +
                     "    )\n" +
                     "  )",
   
