@@ -1,5 +1,4 @@
 
-
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -28,6 +27,12 @@ app.use('/reproceso', uploadFileRouter);
 app.use('/cuadratura-datos', validaRouter);
 app.use('/obtiene-estados', estadosRouter);
 app.use('/descargar', descargarRouter);
+
+
+console.log("USER: ", process.env.USER);
+console.log("PASSWORD: ", process.env.PASSWORD);
+console.log("USER: ", process.env.USER);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

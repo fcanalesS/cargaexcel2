@@ -1,5 +1,3 @@
-require('custom-env').env();
-
 module.exports = {
     user          : process.env.USER,
   
