@@ -32,6 +32,7 @@ app.use('/descargar', descargarRouter);
 console.log("USER: ", process.env.USER);
 console.log("PASSWORD: ", process.env.PASSWORD);
 console.log("USER: ", process.env.USER);
+console.log("HOST: ", process.env.HOST);
 
 
 // catch 404 and forward to error handler
